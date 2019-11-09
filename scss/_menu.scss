@@ -35,3 +35,104 @@
             }
       }
 }
+
+//the menu overlay
+.site-menu{
+
+      position: fixed;
+      top: 0;
+      width: 100%;
+      visibility: hidden;
+
+      &.show{
+            visibility: visible;
+      }
+
+      &__section--links,
+      &__section--branding{
+        
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            float: left;
+            width: 50%;
+            height: 100vh;
+            overflow: hidden;
+      }
+
+      &__section--links{
+            margin: 0;
+            padding: 0;
+            background: rgba(darken($primary-color,5), $alpha: 0.9);
+            list-style: none;
+            transform: translate3d(0, -100%, 0);
+            @include easeOut;
+
+            &.show{
+                  //Slids from TOP 
+                  transform: translate3d(0 , 0, 0);
+            }
+      }
+
+      //Branding Side
+      &__section--branding{
+            background: rgba($primary-color, 0.9);
+            transform: translate3d(0, -100%, 0);
+            @include easeOut;
+
+            &.show{
+                  //Slids from BOTTOM
+                  transform: translate3d(0 ,0, 0);
+            }
+            
+            .portrait{
+                  width: 15rem;
+                  height: 16rem;
+                  background: url('/dist/images/portrait-far.jpg');
+                  transform: scale(0.95);
+                  background-size: cover;
+                  border: solid 3px $secondary-color;
+                  border-radius: 50%;
+            }
+      }
+
+      .site-menu__item{
+
+            transform: translate3d(600px, 0, 0);
+            @include easeOut;
+            &.show{
+                  //slids in from the right
+                  transform: translate3d(0, 0, 0);
+            }
+            &.current > a{
+                  color: $secondary-color;
+            }
+
+            .site-menu__link{
+                  display: inline-block;
+                  position: relative;
+                  font-size: 2rem;
+                  text-transform: uppercase;
+                  padding: 1rem 0;
+                  font-weight: 300;
+                  text-decoration: none;
+                  color: #FFF;
+                  @include easeOut;
+
+                  &:hover{
+                        color: $secondary-color;
+                        @include easeOut;
+                  }
+            }
+
+      }
+
+      //Delay for each menu links item:
+      @for $i from 1 through 6 {
+            .site-menu__item:nth-child(#{$i}){
+                  transition-delay: $i * 0.1s;
+            }
+      }
+
+}
