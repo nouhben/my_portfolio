@@ -1,0 +1,37 @@
+//Menu Button
+.menu-btn{
+      position: absolute;
+      z-index: 3;
+      right: 35px;
+      top: 35px;
+      cursor: pointer;
+      @include easeOut;
+
+      .menu-btn__line{
+            width: 28px;  //1.6rem; //28px
+            height: 3px; //0.7rem;   //3px
+            margin: 0 0 5px 0;
+            background: #FFF;
+            @include easeOut;
+      }
+
+      //Rotate the button into X when the overlay is selected to show the menu
+      &.close{
+            transform: rotate(180deg);
+
+            .menu-btn__line{
+                  //line 1 Rotate
+                  &:nth-child(1){
+                        transform: rotate(45deg) translate(5px, 5px);
+                  }
+                  //Line 2 Hide
+                  &:nth-child(2){
+                        opacity: 0;
+                  }
+                  //Line 3 Rotate in oposite direction
+                  &:nth-child(3){
+                        transform: rotate(-45deg) translate(7px, -6px);
+                  }
+            }
+      }
+}

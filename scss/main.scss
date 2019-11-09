@@ -1,7 +1,11 @@
 @import 'config';
+@import 'menu';
 
 *{
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+
 }
 body{
       @include background;
@@ -50,7 +54,10 @@ header{
 .text-color__secondary{
       color: $secondary-color;
 }
-
+.text-opacity{
+      opacity: 0.75;
+      lighting-color: #FFF;
+}
 main{
       padding: 4rem;
       height: 100%;
