@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'mobile';
 
 *{
       box-sizing: border-box;
@@ -82,13 +83,13 @@ main{
       }
 }
 
-footer{
-      position: relative;
+//footer{
+      /*position: relative;
       padding: 3rem 2rem;
       bottom: 0;
-      h1{
+      //h1{
             position: absolute;
             right: 1rem;
             bottom: 2rem;
       }
-}
+}*/

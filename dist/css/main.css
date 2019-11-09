@@ -92,6 +92,38 @@
   .site-menu .site-menu__item:nth-child(6) {
     transition-delay: 0.6s; }
 
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .large-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.site-menu__section--links,
+  div.site-menu__section--branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.site-menu__section--links.show,
+    div.site-menu__section--branding.show {
+      transform: translate3d(0, 0, 0); }
+  .site-menu__section--links {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .site-menu__section--branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .site-menu__section--branding .portrait {
+      background: url("/dist/images/portrait-close.jpg");
+      width: 150px;
+      height: 150px;
+      transform: scale(0.75); } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -166,11 +198,12 @@ main {
     main#home h1 {
       margin-top: 20vh; }
 
-footer {
-  position: relative;
-  padding: 3rem 2rem;
-  bottom: 0; }
-  footer h1 {
-    position: absolute;
-    right: 1rem;
-    bottom: 2rem; }
+/*position: relative;
+      padding: 3rem 2rem;
+      bottom: 0;
+      //h1{
+            position: absolute;
+            right: 1rem;
+            bottom: 2rem;
+      }
+}*/
