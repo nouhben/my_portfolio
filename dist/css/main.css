@@ -92,38 +92,6 @@
   .site-menu .site-menu__item:nth-child(6) {
     transition-delay: 0.6s; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .large-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.site-menu__section--links,
-  div.site-menu__section--branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.site-menu__section--links.show,
-    div.site-menu__section--branding.show {
-      transform: translate3d(0, 0, 0); }
-  .site-menu__section--links {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .site-menu__section--branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .site-menu__section--branding .portrait {
-      background: url("/dist/images/portrait-close.jpg");
-      width: 150px;
-      height: 150px;
-      transform: scale(0.75); } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -131,7 +99,7 @@
 
 body {
   background-color: #444;
-  color: #fff;
+  color: #FFF;
   margin: 0;
   height: 100%;
   font-family: 'Rubik', sans-serif;
@@ -139,7 +107,8 @@ body {
   body#bg-image {
     background: url(/dist/images/azamat-zhanisov-wO4gtmdlW5Y-unsplash.jpg);
     background-attachment: fixed;
-    background-size: cover; }
+    background-repeat: no-repeat;
+    background-size: 100% auto; }
     body#bg-image:after {
       content: "";
       position: absolute;
@@ -147,7 +116,7 @@ body {
       right: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(68, 68, 68, 0.2);
+      background-color: rgba(68, 68, 68, 0.5);
       z-index: -1; }
 
 h1, h2, h3 {
@@ -180,12 +149,12 @@ header {
   color: #EECe1a; }
 
 .text-opacity {
-  opacity: 0.75;
+  opacity: 0.5;
   lighting-color: #FFF; }
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - $footer-height); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -198,12 +167,71 @@ main {
     main#home h1 {
       margin-top: 20vh; }
 
-/*position: relative;
-      padding: 3rem 2rem;
-      bottom: 0;
-      //h1{
-            position: absolute;
-            right: 1rem;
-            bottom: 2rem;
-      }
-}*/
+.about-info {
+  display: grid;
+  grid-template-areas: "bioBranding bio bio" "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; }
+  .about-info .branding-img {
+    width: 250px;
+    height: 250px;
+    grid-area: bioBranding;
+    margin: auto;
+    border-radius: 50%;
+    border: solid 3px #EECe1a; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info .job {
+    background: #515151;
+    padding: 0.5rem;
+    border-bottom: #EECe1a solid 3px; }
+  .about-info .job-1 {
+    grid-area: job1; }
+  .about-info .job-2 {
+    grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
+
+#main-footer {
+  padding: 1rem;
+  text-align: center;
+  background: #2d2d2d;
+  color: #FFF;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .large-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.site-menu__section--links,
+  div.site-menu__section--branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.site-menu__section--links.show,
+    div.site-menu__section--branding.show {
+      transform: translate3d(0, 0, 0); }
+  .site-menu__section--links {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .site-menu__section--branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .site-menu__section--branding .portrait {
+      background: url("/dist/images/portrait-close.jpg");
+      width: 150px;
+      height: 150px;
+      transform: scale(0.75); }
+  .about-info {
+    grid-template-areas: "bioBranding" "bio" "job1" "job2" "job3";
+    grid-template-columns: 1fr;
+    grid-auto-flow: row; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
