@@ -45,7 +45,7 @@
             }
       }
 
-      .about-info{
+      /*.about-info{
             grid-template-areas: 
                   "bioBranding"
                   "bio"
@@ -55,7 +55,15 @@
                   grid-template-columns: 1fr;
                   grid-auto-flow: row;
 
-      }
+      }*/
+      /*.content-header__bio{
+            grid-template-areas: 
+                  "bioBranding"
+                  "bio";
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+      }*/
 }
 //Smart phones
 @include mediaSmall {

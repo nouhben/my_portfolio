@@ -87,13 +87,16 @@ main{
 
 
 //Styling the About.html page:
+/*
 .about-info{
       display: grid;
       grid-template-areas: 
             "bioBranding bio bio"
-            "job1 job2 job3";
+            "jobs jobs jobs";
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+      grid-auto-flow: row;
+      justify-content: center;
       .branding-img{
             width: 250px;
             height: 250px;
@@ -108,21 +111,109 @@ main{
             font-size: 1.5rem;
       }
       .job{
+            grid-area: jobs;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             background: lighten($primary-color, $amount: 5);
             padding: 0.5rem;
             border-bottom: $secondary-color solid 3px;
       }
-      .job-1{
-            grid-area: job1;
+  
+}*/
+.about-info{
+      display: grid;
+      grid-template-areas: 
+            "content-header__bio"
+            "jobs";
+      gap: 2rem;
+      grid-auto-flow: row;
+      justify-content: center;
+
+      .content-header__bio{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+            grid-auto-rows: 1fr;
+            grid-auto-columns: 1fr;
+            
       }
-      
-      .job-2{
-            grid-area: job2;
+      .branding-img{
+            width: 250px;
+            height: 250px;
+            background: url('/dist/images/portrait-far.jpg');
+            background-position: center center;
+            background-attachment: local;
+            background-size: cover;
+            //grid-area: bioBranding;
+            margin: auto;
+            border-radius: 50%;
+            border: solid 3px $secondary-color;
       }
-      
-      .job-3{
-            grid-area: job3;
+
+      .bio{
+            //grid-area: bio;
+            font-size: 1.5rem;
       }
+      .jobs{
+            grid-area: jobs;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+
+            .job{
+                  background: lighten($primary-color, $amount: 5);
+                  padding: 0.5rem;
+                  border-bottom: $secondary-color solid 3px;
+            }
+      }
+  
+}
+
+//Styling Projects 
+
+.projects{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      justify-content: center;
+      align-items: center;
+      img {
+            width: 100%;
+            border-left: #FFF 3px solid;
+            &:hover{
+                  opacity: 0.6;
+                  border-left: 3px solid $secondary-color;
+                  @include easeOut;
+            }
+      }
+}
+
+//Btn styles
+
+.btn{
+      display: block;
+      padding: 0.5rem 1rem;
+      border: 0;
+      margin-bottom: 0.3rem;
+
+      &:hover{
+            background: $secondary-color;
+            color: setTextColor($primary-color);
+            height: 2.8rem;
+      }
+}
+.btn-dark{
+      @extend .btn;
+      background: darken($primary-color, $amount: 50);
+      color: #FFF;
+}
+
+.btn-light{
+      @extend .btn;
+      background: lighten($primary-color, $amount: 50);
+      color: #333;
 }
 #main-footer{
       padding: 1rem;
